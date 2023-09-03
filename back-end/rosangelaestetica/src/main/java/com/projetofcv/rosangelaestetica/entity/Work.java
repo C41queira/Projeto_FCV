@@ -18,15 +18,17 @@ public class Work implements Serializable{
     private String name; 
     private CategoryWork categoryWork; 
     private String info;
+    private Double value; 
     
     public Work() {
     }
 
-    public Work(Long id, String name, CategoryWork categoryWork, String info) {
+    public Work(Long id, String name, CategoryWork categoryWork, String info, Double value) {
         this.id = id;
         this.name = name;
         this.categoryWork = categoryWork;
         this.info = info;
+        this.value = value; 
     }
 
     public Long getId() {
