@@ -25,7 +25,11 @@
     </header>
     <main>
         <div id="img">
-            <img src="img/imagem350px.png" alt="imagem_G">
+            <picture>
+                <source media="(max-width: 690px)" srcset="img/ImagemApresentacaoP.png" type="image/png">
+                <source media="(max-width: 1030px)" srcset="img/ImagemApresentacaoM.png" type="image/png">
+                <img src="img/ImagemApresentacaoG.png" alt="">
+            </picture>
          </div>
         <section>
             <h1>Serviços</h1>
@@ -84,7 +88,7 @@
         <section id="info_Superior">
             <article class="informacao">
                 <h2>Localização</h2>
-                <p>Jardim Capos Elisisos <br><br> Antonio Matos de Nobrega <br><br> N° 7047</p>
+                <p>Jardim Capos Elisisos<br> Antonio Matos de Nobrega<br> N° 7047</p>
             </article>
             <article class="informacao">
                 <h2>Contato</h2>
