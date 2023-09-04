@@ -1,0 +1,209 @@
+body{
+    margin: 0px;
+    font-family: 'Lobster', cursive;
+    font-family: 'Lobster Two', cursive;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    color: #1c3f60;
+}
+
+#subcabecalho{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100%;
+
+    padding: 20px 0px 20px 0px;
+
+    border-radius: 0px 0px 15px 15px;
+
+    margin: 0px auto 0px auto;
+}
+
+#listaNav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+ul li{
+    background-color: #0b1320;
+    color: white;
+
+    margin-right: 2em;
+
+    padding: 15px 30px;
+
+    border: 1.5px solid black;
+    border-radius: 30px;
+}
+
+ul li:hover{
+    box-shadow: 3px 3px 3px black;
+    position: relative;
+    bottom: 3px;
+    right: 3px;
+    transition: all 0.5s ease-in-out;
+}
+
+li a{
+    color: inherit;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+main{
+    padding-bottom: 20px;
+    background-color: #afc1d0;
+    border-radius: 20px;
+}
+
+#img{
+    display: flex;
+    justify-content: center;
+    padding-top: 2.5em;
+}
+
+main section h1{
+    text-align: center;
+    font-size: 2.5em;
+}
+
+main section article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.servico{
+    padding: 20px 20px 40px 20px;
+
+    margin: 20px 65px 20px 65px;
+
+    width: 300px;
+    height: 300px;
+
+    border: 2px solid black;
+    border-radius: 10px;
+    
+    background-color: #0b1320;
+    color: white;
+
+    text-align: center;
+}
+
+.servico h2{
+    font-size: 20px;
+}
+
+.card
+{
+    position: relative;
+
+    height: 100%;
+
+    border-radius: 10px;
+
+    width: 100%;
+    transform-style: preserve-3d;
+}
+
+.front, .back
+{
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px;
+
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+}
+
+.back
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transform: rotateY(180deg);
+}
+
+.texto_informativo{
+    text-align: justify;
+}
+
+.saiba_mais{
+    display: inline-block;
+
+    background-color: #afc1d0;
+    color: black;
+
+    text-decoration: none;
+    transition: 0.25s ease;
+
+    margin-top: 1.5em;
+
+    padding: 15px 30px;
+
+    border: 1.5px solid black;
+    border-radius: 30px;
+}
+
+.saiba_mais:hover{
+    background-color: #000000;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+footer{
+    padding-top: 20px; 
+    border-radius: 15px 15px 0px 0px;
+}
+
+footer h1{
+    text-align: center;
+}
+
+#info_Superior{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.informacao{
+    width: 280px;
+    height: 140px;
+}
+
+.informacao p{
+    font-size: 18px;
+}
+
+.informacao p a{
+    color: inherit;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+#horario{
+    text-align: center;
+    margin: 60px auto 0px auto;
+}
+
+.icon{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
