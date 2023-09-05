@@ -63,6 +63,15 @@ public class Work implements Serializable{
         this.info = info;
     }
 
+    public Double getValue() {
+        return value;
+    }
+
+    public void setValue(Double value) {
+        this.value = value;
+    } 
+
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -86,7 +95,6 @@ public class Work implements Serializable{
         } else if (!id.equals(other.id))
             return false;
         return true;
-    } 
-
+    }
     
 }
