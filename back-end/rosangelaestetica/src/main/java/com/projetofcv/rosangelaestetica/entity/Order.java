@@ -13,8 +13,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "tb_order")
 public class Order implements Serializable{
 
     @Id
@@ -26,12 +28,29 @@ public class Order implements Serializable{
     private OrderStatus orderStatus;
 
     @ManyToOne
-    @JoinColumn(name = "id_client")
+    @JoinColumn(name = "id_client_order")
     private UserClient userClient; 
 
     @ManyToOne
-    @JoinColumn(name = "id_agenda")
+    @JoinColumn(name = "id_agenda_order")
     private Agenda agendaOrder; 
+
+    @ManyToOne
+    @JoinColumn(name = "work_id", referencedColumnName = "id")
+    private Work workOrder; 
+
+    
+    public Order() {
+    }
+
+    public Order(Long id, Date date, OrderStatus orderStatus, UserClient userClient, Agenda agendaOrder, Work work) {
+        this.id = id;
+        this.date = date;
+        this.orderStatus = orderStatus;
+        this.userClient = userClient;
+        this.agendaOrder = agendaOrder;
+        this.workOrder = work;
+    }
     
     public Long getId() {
         return id;
