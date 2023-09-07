@@ -8,35 +8,35 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import com.projetofcv.rosangelaestetica.entity.User;
-import com.projetofcv.rosangelaestetica.repository.UserRepository;
+import com.projetofcv.rosangelaestetica.entity.Order;
+import com.projetofcv.rosangelaestetica.repository.OrderRepository;
 import com.projetofcv.rosangelaestetica.service.exception.DataBaseException;
 import com.projetofcv.rosangelaestetica.service.exception.ResourceNotFoundException;
 
 import jakarta.persistence.EntityNotFoundException;
 
 @Service
-public class UserService{
-
+public class OrderService {
+    
     @Autowired
-    private UserRepository userRepository; 
+    private OrderRepository orderRepository; 
 
-    public List<User> findAll(){
-        return userRepository.findAll(); 
+    public List<Order> findAll(){
+        return orderRepository.findAll(); 
     }
 
-    public User findById(Long id){
-        Optional<User> obj = userRepository.findById(id); 
+    public Order findById(Long id){
+        Optional<Order> obj = orderRepository.findById(id); 
         return obj.orElseThrow(() -> new ResourceNotFoundException(id)); 
     }
 
-    public User insert(User obj){
-        return userRepository.save(obj);
+    public Order insert(Order obj){
+        return orderRepository.save(obj);
     }
 
     public void delete(Long id){
         try {
-            userRepository.deleteById(id);
+            orderRepository.deleteById(id);
         } catch (EmptyResultDataAccessException e) {
             throw new ResourceNotFoundException(id); 
         } catch (DataIntegrityViolationException e){
@@ -45,20 +45,19 @@ public class UserService{
         
     }
 
-    public User update(Long id, User user){
+    public Order update(Long id, Order Order){
         try {
-            User entity = userRepository.getReferenceById(id); 
-            updateData(entity, user); 
-            return userRepository.save(entity); 
+            Order entity = orderRepository.getReferenceById(id); 
+            updateData(entity, Order); 
+            return orderRepository.save(entity); 
         } catch (EntityNotFoundException e) {
             throw new ResourceNotFoundException(id); 
         }
         
     }
 
-    private void updateData(User entity, User user) {
-        entity.setName(user.getName());
-        entity.setPassword(user.getPassword());
-        entity.setDocument(user.getDocument());
+    private void updateData(Order entity, Order order) {
+        entity.setDate(order.getDate());
+        entity.setOrderStatus(order.getOrderStatus());
     }
 }

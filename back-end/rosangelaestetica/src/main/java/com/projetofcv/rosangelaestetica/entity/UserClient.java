@@ -1,14 +1,24 @@
 package com.projetofcv.rosangelaestetica.entity;
 
+import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "tb_usuario_client")
 public class UserClient extends User{
-    
+
     private String email; 
     private String phone;
     private Double weight; 
     private Double abdomen; 
     private Double braco; 
     private Double perna; 
-    
+
+    @OneToMany(mappedBy = "userClient")
+    private List<Order> orders; 
     
     public UserClient() {
     }

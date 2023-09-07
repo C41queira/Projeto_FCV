@@ -2,33 +2,47 @@ package com.projetofcv.rosangelaestetica.entity;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.projetofcv.rosangelaestetica.entity.enums.CategoryWork;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "tb_work")
 public class Work implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; 
     private String name; 
+    @Enumerated(EnumType.STRING)
     private CategoryWork categoryWork; 
     private String info;
-    private Double value; 
+    private Double price; 
+
+    @ManyToOne
+    @JoinColumn(name = "id_agenda")
+    @JsonIgnore
+    private Agenda agendaWorks; 
     
     public Work() {
     }
 
-    public Work(Long id, String name, CategoryWork categoryWork, String info, Double value) {
+    public Work(Long id, String name, CategoryWork categoryWork, String info, Double price, Agenda agenda) {
         this.id = id;
         this.name = name;
         this.categoryWork = categoryWork;
         this.info = info;
-        this.value = value; 
+        this.price = price; 
+        this.agendaWorks = agenda; 
     }
 
     public Long getId() {
@@ -63,12 +77,12 @@ public class Work implements Serializable{
         this.info = info;
     }
 
-    public Double getValue() {
-        return value;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setValue(Double value) {
-        this.value = value;
+    public void setPrice(Double price) {
+        this.price = price;
     } 
 
 

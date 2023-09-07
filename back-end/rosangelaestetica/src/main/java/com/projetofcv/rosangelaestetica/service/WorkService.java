@@ -60,7 +60,7 @@ public class WorkService {
        entity.setName(work.getName());
        entity.setCategoryWork(work.getCategoryWork());
        entity.setInfo(work.getInfo());
-       entity.setValue(work.getValue());
+       entity.setPrice(work.getPrice());
     }
 }
 

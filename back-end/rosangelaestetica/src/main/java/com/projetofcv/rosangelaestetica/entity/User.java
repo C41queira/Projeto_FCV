@@ -2,29 +2,40 @@ package com.projetofcv.rosangelaestetica.entity;
 
 import java.io.Serializable;
 
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "tb_user")
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "type")
 public class User implements Serializable{
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id; 
+    @Nonnull
     private String name; 
+    @Nonnull 
     private String document; 
-    private String key;
+    @Nonnull 
+    private String password;
     
     public User() {
     }
 
-    public User(Long id, String name, String document, String key) {
+    public User(Long id, String name, String document, String password) {
         this.id = id;
         this.name = name;
         this.document = document;
-        this.key = key;
+        this.password = password;
     }
 
     public Long getId() {
@@ -51,12 +62,12 @@ public class User implements Serializable{
         this.document = document;
     }
 
-    public String getKey() {
-        return key;
+    public String getPassword() {
+        return password;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
@@ -82,7 +93,6 @@ public class User implements Serializable{
         } else if (!id.equals(other.id))
             return false;
         return true;
-    } 
-
+    }
     
 }
