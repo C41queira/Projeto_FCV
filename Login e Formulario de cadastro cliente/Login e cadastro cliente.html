@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<title>Area de Cadastro</title>
+<meta charset="utf-8"/> 
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div>
+ <button><a href="paginainicial.html">Voltar</a></button>
+</div>
+<h1>Login cliente</h1>
+
+ <legend>Login para Acesso</legend>
+<p>
+ <label for="campo_nome">Nome Usuário:</label>
+ <input tabindex="2" type="text" name="nome" id="campo_nome">
+</p>
+<p>
+ <label for="campo_nome">Senha:</label>
+ <input tabindex="2" type="text" name="senha" id="campo_senha">
+</p>
+ <button type="submit" class="botao2">Login</button><br><br>
+<h1>Cadastro cliente</h1>
+        
+<form action="https://webhook.site/c7832918-8b4b-4e94-b88a-f86721edf65c" method="POST">
+ <br><legend>Dados pessoais</legend>
+<p>
+ <label for="campo_nome">Nome:</label>
+ <input tabindex="2" type="text" name="nome" id="campo_nome">
+</p>
+<p>
+ <label for="campo_email">Email:</label>
+ <input tabindex="1" type="email" name="email" id="campo_email" placeholder="email@email.com">                    
+</p>
+<p>
+ <label for="campo_cpf">CPF:</label>
+ <input tabindex="1" type="text" name="cpf" id="campo_cpf" placeholder="XXX.XXX.XXX-XX" pattern="\d{3}.\d{3}.\d{3}-\d{2}">                    
+</p>
+<p>
+ <label for="campo_preferencias">Preferências</label>
+ <select name="campo_preferencias">
+ <optgroup label="Estéticas Corporal">
+ <option value="MSG">Massagem</option>
+ <option value="MSGM">Masgm. Modeladora </option>
+ <option value="MSGL">Masgm. Linfatica</option>
+</optgroup>
+ <optgroup label="Estética Facial">
+ <option value="LDP">Limp. de Pele</option>
+ <option value="RDC">Rmç. de Cravos</option>
+ <option value="ADS">Ajuste de sombrancelha</option>
+</optgroup>
+</select>
+</p>
+<p>
+ <label>Genero</label><br>
+ <input type="radio" id="genero_masculino" name="genero" value="M">
+ <label for="genero_masculino">Masculino</label>
+ <input type="radio" id="genero_feminino" name="genero" value="F">
+ <label for="genero_feminino">Feminino</label>
+</p>
+<p>
+ <label for="campo_idade">Idade</label> 
+ <input type="number" min="16" max="80" id="campo_idade" name="idade" step="1">
+</p>
+<p>
+ <label for="campo_nasc">Data nascimento</label> 
+ <input type="date" id="campo_nasc" name="nasc">
+</p>
+<p>
+ <label for="campo_senha">Senha:</label>
+ <input tabindex="2" type="text" name="senha" id="campo_senha">
+</p>
+<p>
+ <label for="campo_senha">Confirmar Senha:</label>
+ <input tabindex="2" type="text" name="senha" id="campo_senha">
+</p>
+
+ <button type="submit" class="botao">Enviar</button>
+ 
+</form>
+</body>
+</html>
