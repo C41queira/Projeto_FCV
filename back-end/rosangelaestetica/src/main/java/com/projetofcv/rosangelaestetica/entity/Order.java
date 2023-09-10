@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.projetofcv.rosangelaestetica.entity.enums.OrderStatus;
 
 import jakarta.persistence.Entity;
@@ -32,10 +34,12 @@ public class Order implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id_client_order")
+    @JsonIgnoreProperties({"password", "email", "phone", "weight", "abdomen", "braco", "perna"})
     private UserClient userClient;
 
     @ManyToOne
     @JoinColumn(name = "id_agenda_order")
+    @JsonIgnore
     private Agenda agendaOrder;
 
     @ManyToOne

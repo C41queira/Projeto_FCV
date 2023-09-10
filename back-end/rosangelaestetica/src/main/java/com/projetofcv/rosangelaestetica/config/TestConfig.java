@@ -3,11 +3,9 @@ package com.projetofcv.rosangelaestetica.config;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Arrays;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.cglib.core.Local;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
@@ -48,6 +46,7 @@ public class TestConfig implements CommandLineRunner{
         UserAdmin u1 = new UserAdmin(null, "Rosangela", "7250846477", "s2OF499#$", "Conselheiro antonio de nobrega Nº 225");
 
         UserClient uc1 = new UserClient(null, "Maria Antonieta", "7256447", "7rt88$%F", "mariaantoni@gmail.com", "1997798854", null, null, null, null);
+        UserClient uc2 = new UserClient(null, "Renato Carvalho", "725648", "7rt88$%F", "renatocar@yahoo.com.br", "199788974", null, null, null, null);
 
         Agenda a1 = new Agenda(null, null, u1); 
 
@@ -59,16 +58,18 @@ public class TestConfig implements CommandLineRunner{
         LocalTime time = LocalTime.of(10, 30, 0); 
 
         Order o1 = new Order(null, date, time, OrderStatus.PAID, uc1, a1, w1);
+        Order o2 = new Order(null, date, time, OrderStatus.WAITING_PAYMENT, uc2, a1, w3);
+        Order o3 = new Order(null, date, time, OrderStatus.CANCELED, uc1, a1, w2);
         
         u1.setAgenda(a1);
 
-        userRepository.saveAll(Arrays.asList(u1, uc1)); 
+        userRepository.saveAll(Arrays.asList(u1, uc1, uc2)); 
 
         agendaRepository.save(a1); 
 
         workRepository.saveAll(Arrays.asList(w1, w2, w3));
         
-        orderRepository.saveAll(Arrays.asList(o1)); 
+        orderRepository.saveAll(Arrays.asList(o1, o2, o3)); 
         
     }
     

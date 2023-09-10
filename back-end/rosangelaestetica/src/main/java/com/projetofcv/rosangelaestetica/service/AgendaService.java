@@ -9,11 +9,10 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import com.projetofcv.rosangelaestetica.entity.Agenda;
+import com.projetofcv.rosangelaestetica.entity.Order;
 import com.projetofcv.rosangelaestetica.repository.AgendaRepository;
 import com.projetofcv.rosangelaestetica.service.exception.DataBaseException;
 import com.projetofcv.rosangelaestetica.service.exception.ResourceNotFoundException;
-
-import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class AgendaService {
@@ -30,6 +29,11 @@ public class AgendaService {
         return obj.orElseThrow(() -> new ResourceNotFoundException(id)); 
     }
 
+    public List<Order> orders(Long id){
+        Optional<Agenda> obj = agendaRepository.findById(id); 
+        return agendaRepository.findOrders(obj.orElseThrow(() -> new ResourceNotFoundException(id))); 
+    }
+
     public Agenda insert(Agenda obj){
         return agendaRepository.save(obj);
     }
@@ -43,20 +47,5 @@ public class AgendaService {
             throw new DataBaseException(e.getMessage());
         }
         
-    }
-
-    public Agenda update(Long id, Agenda Agenda){
-        try {
-            Agenda entity = agendaRepository.getReferenceById(id); 
-            updateData(entity, Agenda); 
-            return agendaRepository.save(entity); 
-        } catch (EntityNotFoundException e) {
-            throw new ResourceNotFoundException(id); 
-        }
-        
-    }
-
-    private void updateData(Agenda entity, Agenda agenda) {
-      entity.setHorarios(agenda.getHorarios());
     }
 }

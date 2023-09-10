@@ -61,4 +61,14 @@ public class UserService{
         entity.setPassword(user.getPassword());
         entity.setDocument(user.getDocument());
     }
+
+    public User loginUser(String name, String password){
+        try {
+            User userLogin = userRepository.buscarLogin(name, password); 
+            return userLogin; 
+        } catch (Exception e) {
+            throw new ResourceNotFoundException(name); 
+        }
+        
+    }
 }

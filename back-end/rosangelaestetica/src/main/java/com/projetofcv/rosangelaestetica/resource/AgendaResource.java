@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.projetofcv.rosangelaestetica.entity.Agenda;
+import com.projetofcv.rosangelaestetica.entity.Order;
 import com.projetofcv.rosangelaestetica.service.AgendaService;
 
 @RestController
@@ -37,6 +37,12 @@ public class AgendaResource {
         return ResponseEntity.ok().body(u); 
     }
 
+    @GetMapping(value = "/{id}/orders")
+    public ResponseEntity<List<Order>> findOrders(@PathVariable Long id){
+        List<Order> list = service.orders(id);  
+        return ResponseEntity.ok().body(list); 
+    }
+
     @PostMapping
     public ResponseEntity<Agenda> insert(@RequestBody Agenda obj){
         obj = service.insert(obj); 
@@ -50,9 +56,4 @@ public class AgendaResource {
         return ResponseEntity.noContent().build(); 
     }
 
-    @PutMapping(value="/{id}")
-    public ResponseEntity<Agenda> update(@PathVariable Long id, @RequestBody Agenda obj){
-        obj = service.update(id, obj);
-        return ResponseEntity.ok().body(obj); 
-    }
 }

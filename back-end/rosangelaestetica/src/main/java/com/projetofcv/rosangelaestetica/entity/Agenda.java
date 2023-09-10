@@ -18,8 +18,7 @@ public class Agenda implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; 
-    private List<Date> horarios;
+    private Long id;
 
     @OneToOne(mappedBy = "agenda")
     private UserAdmin userAdmin; 
@@ -35,7 +34,6 @@ public class Agenda implements Serializable{
 
     public Agenda(Long id, List<Date> horarios, UserAdmin user) {
         this.id = id;
-        this.horarios = horarios;
         this.userAdmin = user; 
     }
 
@@ -45,14 +43,6 @@ public class Agenda implements Serializable{
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public List<Date> getHorarios() {
-        return horarios;
-    }
-
-    public void setHorarios(List<Date> horarios) {
-        this.horarios = horarios;
     }
 
     @Override

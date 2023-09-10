@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.projetofcv.rosangelaestetica.entity.LoginRequest;
 import com.projetofcv.rosangelaestetica.entity.User;
 import com.projetofcv.rosangelaestetica.service.UserService;
 
@@ -42,6 +43,11 @@ public class UserResource {
         obj = service.insert(obj); 
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).body(obj);
+    }
+
+    @PostMapping(value = "/login")
+    public ResponseEntity<User> login(@RequestBody LoginRequest loginRequest){ 
+        return ResponseEntity.ok().body(service.loginUser(loginRequest.getName(), loginRequest.getPassword())); 
     }
 
     @DeleteMapping(value = "/{id}")
