@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Area de Cadastro</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style/style_cadastro.css">
+</head>
+
+<body>
+    <header>
+        <h1>Cadastro</h1>
+    </header>
+    <main>
+        <form action="#" method="POST">
+
+            <section>
+                <label for="campo_nome">Nome:</label>
+                <input tabindex="2" type="text" name="nome" placeholder="xxxxx xxxxx xxxxx" id="campo_nome" class="input">
+            </section>
+
+            <section>
+                <label for="campo_email">Email:</label>
+                <input tabindex="1" type="email" name="email" placeholder="email@email.com" class="input">
+            </section>
+
+
+            <section>
+                <label for="campo_cpf">CPF:</label>
+                <input tabindex="1" type="text" name="cpf" id="campo_cpf" placeholder="XXX.XXX.XXX-XX"
+                    pattern="\d{3}.\d{3}.\d{3}-\d{2}" class="input">
+            </section>
+            <section>
+                <label for="campo_preferencias">Preferências</label>
+                <select name="campo_preferencias" class="input">
+                    <optgroup label="Estéticas Corporal">
+                        <option value="MSG">Massagem</option>
+                        <option value="MSGM">Masgm. Modeladora </option>
+                        <option value="MSGL">Masgm. Linfatica</option>
+                    </optgroup>
+                    <optgroup label="Estética Facial">
+                        <option value="LDP">Limp. de Pele</option>
+                        <option value="RDC">Rmç. de Cravos</option>
+                        <option value="ADS">Ajuste de sombrancelha</option>
+                    </optgroup>
+                </select>
+            </section>
+
+            <section class="genero">
+                <label id="titulo_genero">Genero</label>
+                <input type="radio" name="genero" value="M">
+                <label for="genero_masculino">M</label>
+                <input type="radio" name="genero" value="F">
+                <label for="genero_feminino">F</label>
+                <input type="radio" name="genero" value="F">
+                <label for="genero_feminino">Trans</label>
+                <input type="radio" name="genero" value="F">
+                <label for="genero_feminino">Outro</label>
+            </section>
+
+            <section>
+                <label for="campo_nasc">Data nascimento</label>
+                <input type="date" id="campo_nasc" name="nasc" class="input">
+            </section>
+
+
+            <section>
+                <label for="campo_senha">Senha:</label>
+                <input tabindex="2" type="text" name="senha" placeholder="********" id="campo_senha" class="input">
+            </section>
+
+            <section>
+                <label for="campo_senha">Confirmar Senha:</label>
+                <input tabindex="2" type="text" name="senha" placeholder="********" id="campo_senha" class="input">
+            </section>
+
+            <section class="botao">
+                <button type="submit">Enviar</button>
+            </section>
+
+
+        </form>
+    </main>
+</body>
+
+</html>

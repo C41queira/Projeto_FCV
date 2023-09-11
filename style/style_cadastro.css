@@ -1,0 +1,90 @@
+:root{
+   ----gradient-color: #F7A7FD, #C896E3, #CDB1FA, #9E96E3, #A7B4FD;
+}
+
+*{
+   margin: 0px;
+   padding: 0px;
+}
+
+body{
+   background-image: linear-gradient(to top, var(----gradient-color));
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-attachment: fixed;
+   background-size: cover;
+}
+
+header{
+   display: flex;
+   justify-content: center;
+   padding: 25px;
+}
+
+main{
+   background-color: white;
+
+   width: 450px;
+
+   margin: auto;
+   padding: 20px;
+
+   border-radius: 8px;
+
+   font-size: 17px;
+}
+
+section{
+   width: 250px;
+   margin: 15px auto;
+}
+
+label{
+   display: block;
+   margin: 8px;
+}
+
+.input{
+   width: 250px;
+   height: 25px;
+   text-align: center;
+}
+
+.genero label{
+   display: inline;
+}
+
+#titulo_genero{
+   display: block;
+}
+
+.botao{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   margin-top: 2em;
+}
+
+button{
+   margin: 10px auto;
+   padding: 10px 2.5em;
+   background-image: linear-gradient(to top, var(----gradient-color));
+   border-radius: 8px;
+}
+
+button:hover{
+   box-shadow: 3px 3px 3px black;
+   position: relative;
+   bottom: 3px;
+   right: 3px;
+   transition: all 0.3s ease-in-out;
+   cursor: pointer;
+}
+
+button:active{
+   box-shadow: none;
+   position: relative;
+   transition: all 0.3s ease-in-out;
+   cursor: pointer;
+}
