@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style_login.css">
     <title>Document</title>
 </head>
-<body>
-    h1>Login cliente</h1>
 
-    <legend>Login para Acesso</legend>
-    <p>
-        <label for="campo_nome">Nome Usuário:</label>
-        <input tabindex="2" type="text" name="nome" id="campo_nome">
-    </p>
-    <p>
-        <label for="campo_nome">Senha:</label>
-        <input tabindex="2" type="text" name="senha" id="campo_senha">
-    </p>
-    <button type="submit" class="botao2">Login</button><br><br>
-    <h1>Cadastro cliente</h1>
+<body>
+    <header>
+    </header>
+
+    <main>
+        <section id="titulo">
+            <h1>Login</h1>
+        </section>
+        <form action="#" method="post">
+            <section>
+                <label for="campo_nome">Nome Usuário:</label>
+                <input tabindex="2" type="text" name="nome" id="campo_nome">
+            </section>
+            <section>
+                <label for="campo_nome">Senha:</label>
+                <input tabindex="2" type="text" name="senha" id="campo_senha">
+            </section>
+            <section class="botao">
+                <button type="submit">Login</button>
+            </section>
+        </form>
+
+        <section class="ref">
+            <p>Ainda não se cadastrou?</p>
+            <p><a href="cadastro.html" class="cadastro">Clique aqui para cadastro</a></p>
+        </section>
+    </main>
 </body>
+
 </html>

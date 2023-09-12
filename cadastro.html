@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Area de Cadastro</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style/style_cadastro.css">
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <section id="titulo">
+            <h1>Cadastro</h1>
+        </section>
+        <form action="#" method="POST">
+            <section>
+                <label for="campo_nome">Nome:</label>
+                <input tabindex="2" type="text" name="nome" placeholder="xxxxx xxxxx xxxxx" id="campo_nome" class="input">
+            </section>
+
+            <section>
+                <label for="campo_email">Email:</label>
+                <input tabindex="1" type="email" name="email" placeholder="email@email.com" class="input">
+            </section>
+
+
+            <section>
+                <label for="campo_cpf">CPF:</label>
+                <input tabindex="1" type="text" name="cpf" id="campo_cpf" placeholder="XXX.XXX.XXX-XX"
+                    pattern="\d{3}.\d{3}.\d{3}-\d{2}" class="input">
+            </section>
+
+            <section>
+                <label for="campo_senha">Senha:</label>
+                <input tabindex="2" type="password" name="senha" placeholder="********" id="campo_senha" class="input">
+            </section>
+
+            <section>
+                <label for="campo_senha">Confirmar Senha:</label>
+                <input tabindex="2" type="password" name="senha" placeholder="********" id="campo_senha" class="input">
+            </section>
+
+            <section class="botao">
+                <button type="submit">Enviar</button>
+            </section>
+        </form>
+
+        <section class="ref">
+            <p>Já obtém login?</p>
+            <p><a href="login.html" class="login">Clique aqui para fazer o Login</a></p>
+        </section>
+    </main>
+</body>
+
+</html>

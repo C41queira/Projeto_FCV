@@ -16,8 +16,6 @@ body{
 }
 
 header{
-   display: flex;
-   justify-content: center;
    padding: 25px;
 }
 
@@ -37,6 +35,14 @@ main{
 section{
    width: 250px;
    margin: 15px auto;
+}
+
+#titulo{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 1.3em;
+   margin: 20px auto 30px auto;
 }
 
 label{
@@ -68,7 +74,7 @@ label{
 
 button{
    margin: 10px auto;
-   padding: 10px 2.5em;
+   padding: 10px 110px;
    background-image: linear-gradient(to top, var(----gradient-color));
    border-radius: 8px;
 }
@@ -87,4 +93,22 @@ button:active{
    position: relative;
    transition: all 0.3s ease-in-out;
    cursor: pointer;
+}
+
+.ref{
+   text-align: center;
+}
+
+.ref p{
+   margin: 5px auto;
+}
+
+.login{
+   font-weight: bold;
+   text-decoration: none;
+   color: black;
+}
+
+.login:hover{
+   text-decoration: underline;
 }
