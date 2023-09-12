@@ -54,12 +54,13 @@ public class TestConfig implements CommandLineRunner{
         Work w2 = new Work(null, "Limpeza facial", CategoryWork.LIMPEZA, "limpefa para remoção de cravos e espinhas no rosto", 60.00, a1); 
         Work w3 = new Work(null, "Massagem facial", CategoryWork.MASSAGE, "massagem para relaxamento dos musculos da face", 100.00, a1);
 
-        LocalDate date = LocalDate.of(2023, 9, 14);
+        LocalDate date1 = LocalDate.of(2023, 9, 14);
+        LocalDate date2 = LocalDate.of(2023, 10, 16);
         LocalTime time = LocalTime.of(10, 30, 0); 
 
-        Order o1 = new Order(null, date, time, OrderStatus.PAID, uc1, a1, w1);
-        Order o2 = new Order(null, date, time, OrderStatus.WAITING_PAYMENT, uc2, a1, w3);
-        Order o3 = new Order(null, date, time, OrderStatus.CANCELED, uc1, a1, w2);
+        Order o1 = new Order(null, date2, time, OrderStatus.PAID, uc1, a1, w1);
+        Order o2 = new Order(null, date1, time, OrderStatus.WAITING_PAYMENT, uc2, a1, w3);
+        Order o3 = new Order(null, date2, time, OrderStatus.CANCELED, uc1, a1, w2);
         
         u1.setAgenda(a1);
 

@@ -24,6 +24,7 @@ public class Order implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonIgnore
     private Long id;
 
     private LocalDate date;

@@ -9,7 +9,6 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import com.projetofcv.rosangelaestetica.entity.Agenda;
-import com.projetofcv.rosangelaestetica.entity.Order;
 import com.projetofcv.rosangelaestetica.repository.AgendaRepository;
 import com.projetofcv.rosangelaestetica.service.exception.DataBaseException;
 import com.projetofcv.rosangelaestetica.service.exception.ResourceNotFoundException;
@@ -27,11 +26,6 @@ public class AgendaService {
     public Agenda findById(Long id){
         Optional<Agenda> obj = agendaRepository.findById(id); 
         return obj.orElseThrow(() -> new ResourceNotFoundException(id)); 
-    }
-
-    public List<Order> orders(Long id){
-        Optional<Agenda> obj = agendaRepository.findById(id); 
-        return agendaRepository.findOrders(obj.orElseThrow(() -> new ResourceNotFoundException(id))); 
     }
 
     public Agenda insert(Agenda obj){

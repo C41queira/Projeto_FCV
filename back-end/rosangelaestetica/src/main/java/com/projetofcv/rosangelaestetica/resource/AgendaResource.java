@@ -37,12 +37,6 @@ public class AgendaResource {
         return ResponseEntity.ok().body(u); 
     }
 
-    @GetMapping(value = "/{id}/orders")
-    public ResponseEntity<List<Order>> findOrders(@PathVariable Long id){
-        List<Order> list = service.orders(id);  
-        return ResponseEntity.ok().body(list); 
-    }
-
     @PostMapping
     public ResponseEntity<Agenda> insert(@RequestBody Agenda obj){
         obj = service.insert(obj); 

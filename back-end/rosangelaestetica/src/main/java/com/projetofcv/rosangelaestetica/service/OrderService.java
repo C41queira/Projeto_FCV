@@ -1,5 +1,6 @@
 package com.projetofcv.rosangelaestetica.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,6 +29,10 @@ public class OrderService {
     public Order findById(Long id){
         Optional<Order> obj = orderRepository.findById(id); 
         return obj.orElseThrow(() -> new ResourceNotFoundException(id)); 
+    }
+
+    public List<Order> findOrdesByDate(LocalDate date){
+        return orderRepository.findOrdersByDate(date); 
     }
 
     public Order insert(Order obj){
