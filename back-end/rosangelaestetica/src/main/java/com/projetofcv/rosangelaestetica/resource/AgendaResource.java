@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.projetofcv.rosangelaestetica.entity.Agenda;
-import com.projetofcv.rosangelaestetica.entity.Order;
 import com.projetofcv.rosangelaestetica.service.AgendaService;
 
 @RestController

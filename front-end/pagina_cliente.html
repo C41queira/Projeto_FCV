@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleCliente.css">
+    <title>Cliente</title>
+</head>
+
+<body>
+    <header>
+        <h1>Atendimentos #####</h1>
+    </header>
+
+    <main>
+        <h2>Informações Basicas</h2>
+        <section class="informacao" id="inf_basico">
+            <img src="img/fotoPerfil150px.jpg" alt="">
+            <article>
+                <div class="atributo">
+                    <p>Nome:</p>
+                    <p id="name"></p>
+                </div>
+                <div class="atributo">
+                    <p>Email:</p>
+                    <p id="email"></p>
+                </div>
+            </article>
+
+            <article>
+                <div class="atributo">
+                    <p>Idade:</p>
+                    <p id="idade"> anos</p>
+                </div>
+                <div class="atributo">
+                    <p>Telefone:</p>
+                    <p id="telefone"></p>
+                </div>
+            </article>
+        </section>
+
+        <h2>Medidas</h2>
+        <section class="informacao">
+            <article>
+                <p>Altura:</p>
+                <p>x,xx m</p>
+            </article>
+
+            <article>
+                <p>Braço:</p>
+                <p>xx cm</p>
+            </article>
+
+            <article>
+                <p>Perna:</p>
+                <p>xx cm</p>
+            </article>
+
+            <article>
+                <p>Abdome:</p>
+                <p>xx cm</p>
+            </article>
+        </section>
+
+        <h2>Pedidos Realizados</h2>
+        <section id="tabela">
+            <table>
+                <tr>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Serviço</th>
+                    <th>Preço</th>
+                </tr>
+                <tr>
+                    <td>15/10</td>
+                    <td>10:30</td>
+                    <td>Massagem</td>
+                    <td>R$150,00</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script type="module" src="js/api.js"></script>
+    <script type="module" src="js/elementosCliente.js"></script>
+</body>
+
+</html>
