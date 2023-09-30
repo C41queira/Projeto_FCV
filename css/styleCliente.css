@@ -1,6 +1,6 @@
 :root{
     --gradient-color: #CDB1FA, #9E96E3, #A7B4FD;
-    --pontas: #F7A7FD;  
+    --pontas: rgb(221, 221, 221);  
 }
 
 *{

@@ -1,7 +1,5 @@
 :root{
-
     --gradient-color: #CDB1FA, #9E96E3, #A7B4FD;
-    --servico: #F7A7FD;
 }
 
 *{
@@ -83,7 +81,7 @@ ul li{
 }
 
 ul li:hover{
-    box-shadow: 3px 3px 3px black;
+    box-shadow: 5px 5px 8px black;
     position: relative;
     bottom: 3px;
     right: 3px;
@@ -141,12 +139,16 @@ main section article{
     background-image: linear-gradient(var(--gradient-color));
 }
 
+.servico:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px black;
+}
+
 .servico h2{
     font-size: 20px;
 }
 
-.card
-{
+.card{
     position: relative;
 
     height: 100%;
@@ -224,10 +226,23 @@ footer h1{
     justify-content: space-around;
 }
 
+@media (max-width: 850px) {
+    #info_Superior{
+      width: 100%;
+      flex-direction: column;
+    }
+}
+
 .informacao{
     width: 280px;
     height: 140px;
     justify-content: center;
+}
+
+@media (max-width: 850px) {
+    .informacao{
+        margin: 0 auto;
+    }
 }
 
 .informacao p{
