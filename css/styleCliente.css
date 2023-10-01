@@ -56,8 +56,25 @@ h2{
 
 .informacao{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+}
+
+#linhaPadrao{
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+}
+
+@media(max-width: 650px){
+    #inf_basico{
+       flex-direction: column;
+    }
+
+    #linhaPadrao{
+        width: 400px;
+        margin-top: 50px;
+    }
 }
 
 .atributo{
@@ -105,4 +122,10 @@ footer{
     border-bottom: 1px solid black;
     border-right: 1px solid black;
     border-left: 1px solid black;
+}
+
+@media(max-width: 770px){
+    header, main, footer{
+        width: 100%;
+    }
 }
