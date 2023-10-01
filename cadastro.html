@@ -3,7 +3,8 @@
 
 <head>
     <title>Area de Cadastro</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style_cadastro.css">
 </head>
 
@@ -15,26 +16,26 @@
             <h1>Cadastro</h1>
         </section>
         <form action="#" method="POST">
-            <section>
+            <div>
                 <label for="campo_nome">Nome:</label>
                 <input tabindex="2" type="text" name="nome" placeholder="xxxxx xxxxx xxxxx" id="campo_nome" class="input">
-            </section>
+            </div>
 
-            <section>
+            <div>
                 <label for="campo_email">Email:</label>
-                <input tabindex="1" type="email" name="email" placeholder="email@email.com" class="input">
-            </section>
+                <input tabindex="1" type="email" name="email" placeholder="email@email.com" id="campo_email" class="input">
+            </div>
 
 
-            <section>
+            <div>
                 <label for="campo_cpf">CPF:</label>
                 <input tabindex="1" type="text" name="cpf" id="campo_cpf" placeholder="XXX.XXX.XXX-XX"
                     pattern="\d{3}.\d{3}.\d{3}-\d{2}" class="input">
-            </section>
+            </div>
 
-            <section>
+            <div>
                 <label for="campo_preferencias">Preferências:</label>
-                <select name="campo_preferencias" class="input">
+                <select name="campo_preferencias" id="campo_preferencias" class="input">
                     <optgroup label="Estéticas Corporal">
                         <option value="MSG">Massagem</option>
                         <option value="MSGM">Masgm. Modeladora </option>
@@ -46,46 +47,46 @@
                         <option value="ADS">Ajuste de sombrancelha</option>
                     </optgroup>
                 </select>
-            </section>
+            </div>
 
-            <section class="genero">
-                <label id="titulo_genero">Genero:</label>
-                <input type="radio" name="genero" value="M">
+            <div class="genero">
+                <label for="genero" id="titulo_genero">Genero:</label>
+                <input type="radio" name="genero" id="genero_masculino" value="M">
                 <label for="genero_masculino">M</label>
-                <input type="radio" name="genero" value="F">
+                <input type="radio" name="genero" id="genero_feminino" value="F">
                 <label for="genero_feminino">F</label>
-                <input type="radio" name="genero" value="F">
-                <label for="genero_feminino">Trans</label>
-                <input type="radio" name="genero" value="F">
-                <label for="genero_feminino">Outro</label>
-            </section>
+                <input type="radio" name="genero" id="genero_trans" value="F">
+                <label for="genero_trans">Trans</label>
+                <input type="radio" name="genero" id="genero_outros" value="F">
+                <label for="genero_outros">Outro</label>
+            </div>
 
-            <section>
+            <div>
                 <label for="campo_nasc">Data nascimento:</label>
                 <input type="date" id="campo_nasc" name="nasc" class="input">
-            </section>
+            </div>
 
-            <section>
+            <div>
                 <label for="campo_senha">Senha:</label>
                 <input tabindex="2" type="password" name="senha" placeholder="********" id="campo_senha" class="input">
-            </section>
+            </div>
 
-            <section>
-                <label for="campo_senha">Confirmar Senha:</label>
-                <input tabindex="2" type="password" name="senha" placeholder="********" id="campo_senha" class="input">
-            </section>
+            <div>
+                <label for="campo_senha_confirma">Confirmar Senha:</label>
+                <input tabindex="2" type="password" name="senha" placeholder="********" id="campo_senha_confirma" class="input">
+            </div>
 
-            <section class="botao">
+            <div class="botao">
                 <button type="submit">Enviar</button>
-            </section>
+            </div>
         </form>
 
-        <section class="ref">
+        <div class="ref">
             <p>Já obtém login?</p>
             <p><a href="login.html" class="login">Clique aqui para fazer o Login</a></p>
             <p>Ou</p>
             <p><a href="index.html" class="login">Volte a pagina inicial</a></p>
-        </section>
+        </div>
     </main>
 </body>
 
