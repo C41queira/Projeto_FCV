@@ -3,7 +3,6 @@ package com.projetofcv.rosangelaestetica.entity;
 import java.io.Serializable;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.projetofcv.rosangelaestetica.entity.enums.CategoryWork;
 
 import jakarta.persistence.Entity;
@@ -12,8 +11,6 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -28,12 +25,7 @@ public class Work implements Serializable{
     @Enumerated(EnumType.STRING)
     private CategoryWork categoryWork; 
     private String info;
-    private Double price; 
-
-    @ManyToOne
-    @JoinColumn(name = "id_agenda")
-    @JsonIgnore
-    private Agenda agendaWorks; 
+    private Double price;  
 
     @OneToMany(mappedBy = "workOrder")
     private List<Order> orders;
@@ -41,13 +33,12 @@ public class Work implements Serializable{
     public Work() {
     }
 
-    public Work(Long id, String name, CategoryWork categoryWork, String info, Double price, Agenda agenda) {
+    public Work(Long id, String name, CategoryWork categoryWork, String info, Double price) {
         this.id = id;
         this.name = name;
         this.categoryWork = categoryWork;
         this.info = info;
-        this.price = price; 
-        this.agendaWorks = agenda; 
+        this.price = price;
     }
 
     public Long getId() {

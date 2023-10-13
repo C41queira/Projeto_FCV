@@ -1,6 +1,7 @@
 package com.projetofcv.rosangelaestetica.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.DiscriminatorColumn;
@@ -10,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -27,6 +29,9 @@ public class User implements Serializable{
     private String document; 
     @Nonnull 
     private String password;
+
+    @OneToMany(mappedBy = "userClient")
+    private List<Order> orders; 
     
     public User() {
     }

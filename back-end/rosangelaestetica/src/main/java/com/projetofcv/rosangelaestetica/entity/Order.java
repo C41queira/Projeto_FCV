@@ -5,7 +5,6 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.projetofcv.rosangelaestetica.entity.enums.OrderStatus;
 
 import jakarta.persistence.Entity;
@@ -34,14 +33,8 @@ public class Order implements Serializable {
     private OrderStatus orderStatus;
 
     @ManyToOne
-    @JoinColumn(name = "id_client_order")
-    @JsonIgnoreProperties({"password", "email", "phone", "weight", "abdomen", "braco", "perna"})
-    private UserClient userClient;
-
-    @ManyToOne
-    @JoinColumn(name = "id_agenda_order")
-    @JsonIgnore
-    private Agenda agendaOrder;
+    @JoinColumn(name = "id_user_order")
+    private User userClient;
 
     @ManyToOne
     @JoinColumn(name = "work_id", referencedColumnName = "id")
@@ -50,14 +43,12 @@ public class Order implements Serializable {
     public Order() {
     }
 
-    public Order(Long id, LocalDate date, LocalTime time, OrderStatus orderStatus, UserClient userClient,
-            Agenda agendaOrder, Work work) {
+    public Order(Long id, LocalDate date, LocalTime time, OrderStatus orderStatus, User userClient, Work work) {
         this.id = id;
         this.date = date;
         this.time = time;
         this.orderStatus = orderStatus;
         this.userClient = userClient;
-        this.agendaOrder = agendaOrder;
         this.workOrder = work;
     }
 
@@ -85,21 +76,6 @@ public class Order implements Serializable {
         this.orderStatus = orderStatus;
     }
 
-    public UserClient getUserClient() {
-        return userClient;
-    }
-
-    public void setUserClient(UserClient userClient) {
-        this.userClient = userClient;
-    }
-
-    public Agenda getAgendaOrder() {
-        return agendaOrder;
-    }
-
-    public void setAgendaOrder(Agenda agendaOrder) {
-        this.agendaOrder = agendaOrder;
-    }
 
     public Work getWorkOrder() {
         return workOrder;
@@ -115,6 +91,14 @@ public class Order implements Serializable {
 
     public void setTime(LocalTime time) {
         this.time = time;
+    }
+
+    public User getUserClient() {
+        return userClient;
+    }
+
+    public void setUserClient(User userClient) {
+        this.userClient = userClient;
     }
 
     @Override
@@ -141,4 +125,5 @@ public class Order implements Serializable {
             return false;
         return true;
     }
+
 }
