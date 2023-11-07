@@ -25,10 +25,10 @@ form.addEventListener("submit", function (event) {
 
     login("http://localhost:8080/users/login", {name: username, password: password},data =>{
  
-        localStorage.setItem('client', data); 
+        sessionStorage.setItem('client', data); 
 
-        console.log(localStorage.getItem('client'));
+        console.log(sessionStorage.getItem('client'));
 
-        window.location.href = "pagina_cliente.html"
+       window.location.href = "pagina_cliente.html"
     })
-})
+}) 

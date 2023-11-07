@@ -1,4 +1,4 @@
-var cards = document.querySelectorAll(".card");
+var cards = document.querySelectorAll(".servico");
 var playing = false;
 
 cards.forEach(function(card){

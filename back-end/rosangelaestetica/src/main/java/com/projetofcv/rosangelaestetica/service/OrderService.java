@@ -35,6 +35,10 @@ public class OrderService {
         return orderRepository.findOrdersByDate(date); 
     }
 
+    public List<Order> findOrdersByUserClient(Long id){
+        return orderRepository.findOrdersByUserId(id); 
+    }
+
     public Order insert(Order obj){
         return orderRepository.save(obj);
     }

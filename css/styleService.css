@@ -1,0 +1,28 @@
+:root{
+    --gradient-color: #CDB1FA, #9E96E3, #A7B4FD;
+}
+
+.container {
+    width: 600px;
+}
+
+.container > p{
+    text-align: justify;
+}
+
+#img-tabela{
+    display: flex;
+}
+
+.botoes{
+    margin: auto;
+    margin-top: 1.5em;
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.bot{
+    margin-top: 12px;
+    font-size: 1.2em !important;
+}

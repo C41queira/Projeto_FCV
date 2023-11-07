@@ -3,44 +3,55 @@ package com.projetofcv.rosangelaestetica.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.annotation.Nonnull;
-import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_user")
-@Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "type")
 public class User implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id; 
+
     @Nonnull
-    private String name; 
+    private String name;
+
     @Nonnull 
     private String document; 
+
     @Nonnull 
     private String password;
 
+    private String phone;
+    private String email;
+    private String age;
+
+
     @OneToMany(mappedBy = "userClient")
+    @JsonIgnore
     private List<Order> orders; 
     
     public User() {
     }
 
-    public User(Long id, String name, String document, String password) {
+   
+
+    public User(Long id, String name, String document, String password, String phone, String email, String age) {
         this.id = id;
         this.name = name;
         this.document = document;
         this.password = password;
+        this.phone = phone;
+        this.email = email;
+        this.age = age;
     }
 
     public Long getId() {
@@ -75,6 +86,54 @@ public class User implements Serializable{
         this.password = password;
     }
 
+    
+    public String getPhone() {
+        return phone;
+    }
+
+
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+
+
+    public String getEmail() {
+        return email;
+    }
+
+
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
+
+    public String getAge() {
+        return age;
+    }
+
+
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+    
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -99,5 +158,5 @@ public class User implements Serializable{
             return false;
         return true;
     }
-    
+
 }

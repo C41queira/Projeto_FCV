@@ -107,7 +107,7 @@ td{
 footer{
     margin: 0px auto 3% auto;
 
-    padding: 2em 0px 1em 0px;
+    padding: 2em 0px 4em 0px;
 
     width: 750px;
     height: 45px;
@@ -122,6 +122,12 @@ footer{
     border-bottom: 1px solid black;
     border-right: 1px solid black;
     border-left: 1px solid black;
+}
+
+.botao{
+    background-image: linear-gradient(var(--gradient-color));
+    margin: 0px 30px;
+    font-size: 18px !important;
 }
 
 @media(max-width: 770px){

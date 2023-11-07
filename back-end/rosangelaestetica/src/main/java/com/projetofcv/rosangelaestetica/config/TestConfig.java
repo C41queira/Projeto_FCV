@@ -36,8 +36,8 @@ public class TestConfig implements CommandLineRunner{
     @Override
     public void run(String... args) throws Exception {
 
-        User uc1 = new User(null, "Maria Antonieta", "7256447", "7rt88$%F");
-        User uc2 = new User(null, "Renato Carvalho", "725648", "7rt88$%F");
+        User uc1 = new User(null, "Maria Antonieta", "7256447", "7rt88$%F", "35447688", "bertinviana@gmail.com", "55");
+        User uc2 = new User(null, "Renato Carvalho", "725648", "7rt88$%F", "35447688", "bertinviana@gmail.com", "55");
 
 
         Work w1 = new Work(null, "Massagem de mãos", CategoryWork.MASSAGE, "Massagem para as mãos para alivio dass dores", 120.00); 
