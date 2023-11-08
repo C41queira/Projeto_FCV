@@ -64,30 +64,8 @@ input {
     margin-top: 2em;
 }
 
-button {
-    margin: 10px auto;
-    padding: 10px 110px;
-    background-image: linear-gradient(to top, var(----gradient-color));
-    border-radius: 8px;
-}
-
-button:hover {
-    box-shadow: 3px 3px 3px black;
-    position: relative;
-    bottom: 3px;
-    right: 3px;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-}
-
-button:active {
-    box-shadow: none;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-}
-
 .ref{
+    margin-top: 25px;
     text-align: center;
 }
 
