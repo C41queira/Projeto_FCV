@@ -2,31 +2,38 @@ var client = JSON.parse(sessionStorage.getItem('client'));
 
 var url = `http://127.0.0.1:8080/orders/search_orders_user/${client.id}`; 
 
-var xhr;
+async function getOrders() {
+    const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
 
-if (window.XMLHttpRequest) {
-    xhr = new XMLHttpRequest();
-} else if (window.ActiveXObject) {
-    xhr = new ActiveXObject();
+    if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+    }
+
+    const listObject = await response.json();
+    return listObject;
 }
 
-xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4) {
-        var listObject = JSON.parse(xhr.responseText); 
+async function populateTable() {
+    const table = document.getElementById("table");
+    try {
+        const listObject = await getOrders();
         listObject.forEach(element => {
             createTr(element); 
         }); 
-        console.log(JSON.parse(xhr.responseText));
+        console.log(listObject);
+    } catch (error) {
+        console.error('An error occurred:', error);
     }
 }
 
-xhr.open("GET", url, true);
-xhr.setRequestHeader("Accept", "application/json");
-xhr.send();
+populateTable();
 
 /* ------------------------------------------------------------------------------------------------- */
-
-var table = document.getElementById("table");
 
 function createTr(data) {
 
@@ -50,6 +57,4 @@ function createTr(data) {
 
     table.appendChild(newTr);
 
-
 }
-

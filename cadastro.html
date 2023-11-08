@@ -19,12 +19,14 @@
         <form method="POST" id="forms_cadastro">
             <div>
                 <label for="campo_nome">Nome:</label>
-                <input tabindex="2" type="text" name="nome" placeholder="xxxxx xxxxx xxxxx" id="campo_nome" class="input">
+                <input tabindex="2" type="text" name="nome" placeholder="xxxxx xxxxx xxxxx" id="campo_nome"
+                    class="input">
             </div>
 
             <div>
                 <label for="campo_email">Email:</label>
-                <input tabindex="1" type="email" name="email" placeholder="email@email.com" id="campo_email" class="input">
+                <input tabindex="1" type="email" name="email" placeholder="email@email.com" id="campo_email"
+                    class="input">
             </div>
 
 
@@ -34,7 +36,7 @@
                     pattern="\d{3}.\d{3}.\d{3}-\d{2}" class="input">
             </div>
 
-            <!-- <div>
+            <div>
                 <label for="campo_preferencias">Preferências:</label>
                 <select name="campo_preferencias" id="campo_preferencias" class="input">
                     <optgroup label="Estéticas Corporal">
@@ -51,21 +53,14 @@
             </div>
 
             <div class="genero">
-                <label for="genero" id="titulo_genero">Genero:</label>
-                <input type="radio" name="genero" id="genero_masculino" value="M">
-                <label for="genero_masculino">M</label>
-                <input type="radio" name="genero" id="genero_feminino" value="F">
-                <label for="genero_feminino">F</label>
-                <input type="radio" name="genero" id="genero_trans" value="F">
-                <label for="genero_trans">Trans</label>
-                <input type="radio" name="genero" id="genero_outros" value="F">
-                <label for="genero_outros">Outro</label>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="campo_telefone" name="telefone" class="input" placeholder="19999999999">
             </div>
 
             <div>
-                <label for="campo_nasc">Data nascimento:</label>
-                <input type="date" id="campo_nasc" name="nasc" class="input">
-            </div> -->
+                <label for="campo_nasc">Idade</label>
+                <input type="text" id="campo_nasc" name="nasc" class="input" placeholder="xx anos">
+            </div>
 
             <div>
                 <label for="campo_senha">Senha:</label>
@@ -74,7 +69,8 @@
 
             <div>
                 <label for="campo_senha_confirma">Confirmar Senha:</label>
-                <input tabindex="2" type="password" name="senha" placeholder="********" id="campo_senha_confirma" class="input">
+                <input tabindex="2" type="password" name="senha" placeholder="********" id="campo_senha_confirma"
+                    class="input">
             </div>
 
             <div class="botao">

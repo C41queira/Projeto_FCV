@@ -1,6 +1,6 @@
 const form = document.querySelector('#formulario');
 
-function getApi(url, data ,callback) {
+async function getApi(url, data ,callback) {
     let xhr = new XMLHttpRequest();
 
     xhr.onload = function () {
@@ -13,7 +13,7 @@ function getApi(url, data ,callback) {
     xhr.send(JSON.stringify(data));
 }
 
-function login(url, data, callback) {
+async function login(url, data, callback) {
     getApi(url, data, response => callback(response))
 }
 
@@ -23,9 +23,9 @@ form.addEventListener("submit", function (event) {
     var username = document.getElementById("campo_nome").value;
     var password = document.getElementById("campo_senha").value;
 
-    login("http://localhost:8080/users/login", {name: username, password: password},data =>{
+    login("http://localhost:8080/users/login", {name: username, password: password},callback =>{
  
-        sessionStorage.setItem('client', data); 
+        sessionStorage.setItem('client', callback); 
 
         console.log(sessionStorage.getItem('client'));
 
