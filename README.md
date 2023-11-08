@@ -1,4 +1,3 @@
-# Descrição projeto FullStack
 # Projeto_FCV
 ## Integrantes
 - Caick Bertin Viana / 202302773664
@@ -16,6 +15,7 @@ Este projeto acadêmico tem como objetivo desenvolver as habilidades de programa
 ## Tecnologias Utilizadas 
 - HTML e CSS;
 - JavaScript;
-- Java - Spring Boot.
+## Repositório Front-End
+Este repositorio é visado apenas para a parte de demonstração do front-end do código, como as paginas principais, as interligações, os estilos e modelos aplicados e o trabalho com JavaScript realizado para o consumo da Api e outros procedimentos necessarios
 ## Conclusão
 O site "Estética Rosangela" será a porta de entrada virtual para o mundo de beleza e bem-estar oferecido pelo estabelecimento. Com todas essas funcionalidades, os clientes em potencial poderão facilmente explorar o que a clínica tem a oferecer e estarão atualizados sobre os eventos emocionantes e promoções especiais que a Estética Rosangela planeja realizar. Seu design intuitivo e informações detalhadas garantirão que os visitantes tenham uma ideia completa dos serviços e da equipe antes mesmo de chegarem lá.
