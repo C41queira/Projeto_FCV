@@ -64,7 +64,7 @@ ul{
 ul li{
     color: black;
 
-    margin: 5px 20px;
+    margin: 5px 15px;
 
     padding: 8px 8px;
 }
@@ -248,4 +248,13 @@ footer h1{
     width: 15px;
     height: 15px;
     margin-right: 5px;
+}
+
+.copywrigth{
+    display: flex;
+    justify-content: space-around;
+
+    border-top: 0.8px solid black;
+
+    padding-top: 15px;
 }

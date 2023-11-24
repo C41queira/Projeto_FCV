@@ -125,7 +125,6 @@ footer{
 }
 
 .botao{
-    background-image: linear-gradient(var(--gradient-color));
     margin: 0px 30px;
     font-size: 18px !important;
 }

@@ -1,0 +1,30 @@
+.container {
+    width: 900px !important;
+}
+
+.devs{
+    width: 615px;
+    margin: auto;
+
+    padding: 15px 0;
+
+    margin-top: 15px;
+
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.devs> div > img {
+    float: left;
+    margin: 0 10px 10px 0;
+
+    width: 200px;
+}
+
+.info{
+    display: flex;
+    justify-content: space-around;
+
+    margin: 20px 0 10px 0;
+}
+

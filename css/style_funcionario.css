@@ -1,0 +1,31 @@
+* { margin: 0; padding: 0;}
+
+main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.container{
+    width: 50%;
+    background-color: cadetblue;
+    padding-bottom: 25px;
+}
+
+#formsBusca{
+    display: flex;
+    justify-content: space-around;
+}
+
+#tabela{
+    background-color: antiquewhite;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+table{
+    margin-top: 10px;
+}
+

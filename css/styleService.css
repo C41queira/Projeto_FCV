@@ -1,20 +1,40 @@
-:root{
+:root {
     --gradient-color: #CDB1FA, #9E96E3, #A7B4FD;
 }
 
-.container {
-    width: 600px;
+@media (max-width: 770px) {
+    main{
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .container {
+        width: 100% !important;
+        display: inline-block !important;
+    }
+
+    .imagemBannerServico{
+        width: 400px; 
+        margin: 0px 50px;
+    }
 }
 
-.container > p{
+@media (max-width: 550px){
+    .imagemBannerServico{
+        margin: 0px 30px;
+    }
+}
+
+.container>p {
     text-align: justify;
 }
 
-#img-tabela{
+#img-tabela {
     display: flex;
 }
 
-.botoes{
+.botoes {
     margin: auto;
     margin-top: 1.5em;
     display: flex;
@@ -22,7 +42,7 @@
     width: 50%;
 }
 
-.bot{
+.bot {
     margin-top: 12px;
     font-size: 1.2em !important;
 }
