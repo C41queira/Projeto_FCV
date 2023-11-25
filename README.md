@@ -1,7 +1,7 @@
 # Projeto_FCV
 ## Integrantes
 - Caick Bertin Viana / 202302773664
-- Fabrício Amorim / 202302857957
+- Fabrício Amorim dos Santos / 202302857957
 - Victor Hugo Brito Mariao / 202303377101
 ## Tema escolhido 
 Este projeto acadêmico tem como objetivo desenvolver as habilidades de programação dos alunos, tendo como tema principal o desenvolvimento de uma página web para uma trabalhadora autônoma que realiza procedimentos estéticos. A página web visa tornar mais prático e eficiente o dia a dia do seu trabalho, auxiliando os clientes na marcação de horários, na análise de preços e na praticidade da própria trabalhadora.
