@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">?
+<link rel="stylesheet" type="text/css" href="style_atendimento.css" />
+<title>gendamento de Serviços Estéticos</title>
+</head>
+<body>
+<div class="container">
+<div class="form">
+<div class="container">
+    <form>
+        <h3>AGENDAMENTOS</h3>
+        <h5>Preencha o formulario do seu agendamento estetico para que possamos adicionalo a nossa agenda de procedimentos.</h5>
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="campo_email">Email:</label><br>
+        <input tabindex="1" type="email" name="email" id="campo_email" placeholder="email@email.com"><br><br>
+
+        <label for="servico">Selecione o serviço:</label><br>
+        <select id="servico" name="servico" required>
+            <option value="limpeza-de-pele">Limpeza de Pele</option>
+            <option value="massagem">Massagem</option>
+            <option value="depilacao">Depilação</option>
+            <option value="manicure-pedicure">Manicure e Pedicure</option>
+        </select><br><br>
+
+        <label for="Pacote">Selecione o Pacote:</label><br>
+        <select id="pacote" name="pacote" required>
+            <option value="1 vez por semana">1 vez por mes</option>
+            <option value="3 vezes por semana">3 vezes por mes</option>
+            <option value="todos os dias">todos os dias</option>
+        </select><br><br>
+
+        <label for="data">Data do agendamento:</label><br>
+        <input type="date" id="data" name="data" required><br><br>
+
+        <label>Horario Agendamento:</label><br>
+        <input type="time" name="schedule_time" min="00:00" max="23:59" step="600"><br><br>
+
+        <button type="submit" name="schedule_button">Agendar</button><br><br>
+        <button>voltar</button>
+    </form>
+    </div>
+</body>
+</html>
