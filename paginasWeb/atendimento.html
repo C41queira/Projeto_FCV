@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/style_atendimento.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style_atendimento.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <title>Agendamento</title>
 </head>
@@ -13,33 +13,33 @@
 
     <main>
         <div class="container text-center">
-            <h3>AGENDAMENTO</h3>
+            <h3>Agendamento</h3>
             <p>Preencha o formulario do seu agendamento estetico para que possamos adicionalo a nossa agenda de procedimentos.</p>
 
             <form>
                 <label for="nome">Nome:</label><br>
-                <input type="text" id="nome" name="nome" required><br><br>
+                <input type="text" id="nome" name="nome"><br><br>
 
                 <label for="campo_email">Email:</label><br>
                 <input tabindex="1" type="email" name="email" id="campo_email" placeholder="email@email.com"><br><br>
 
                 <label for="servico">Selecione o serviço:</label><br>
-                <select id="servico" name="servico" required>
+                <select id="servico" name="servico">
                     <option value="limpeza-de-pele">Limpeza de Pele</option>
                     <option value="massagem">Massagem</option>
                     <option value="depilacao">Depilação</option>
                     <option value="manicure-pedicure">Manicure e Pedicure</option>
                 </select><br><br>
 
-                <label for="Pacote">Selecione o Pacote:</label><br>
-                <select id="pacote" name="pacote" required>
+                <label for="pacote">Selecione o Pacote:</label><br>
+                <select id="pacote" name="pacote" >
                     <option value="1 vez por semana">1 vez por mes</option>
                     <option value="3 vezes por semana">3 vezes por mes</option>
                     <option value="todos os dias">todos os dias</option>
                 </select><br><br>
 
                 <label for="data">Data do agendamento:</label><br>
-                <input type="date" id="data" name="data" required><br><br>
+                <input type="date" id="data" name="data"><br><br>
 
                 <label>Horario Agendamento:</label><br>
                 <input type="time" name="schedule_time" min="00:00" max="23:59" step="600"><br><br>
