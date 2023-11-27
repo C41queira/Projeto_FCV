@@ -29,6 +29,6 @@ form.addEventListener("submit", function (event) {
 
         console.log(sessionStorage.getItem('client'));
 
-       window.location.href = "pagina_cliente.html"
+       window.location.href = "../user/pagina_cliente.html"
     })
 }) 
