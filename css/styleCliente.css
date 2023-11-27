@@ -49,6 +49,10 @@ main{
     border-left: 1px solid black;
 }
 
+#imagemPerfil{
+    width: 150px;
+}
+
 h2{
     text-align: center;
     padding: 1.3em;

@@ -6,6 +6,7 @@ document.getElementById('forms_cadastro').addEventListener('submit', async funct
     var cpf = document.getElementById('campo_cpf').value;
     var senha = document.getElementById('campo_senha').value;
     var idade = document.getElementById('campo_nasc').value; 
+    var telefone = document.getElementById('campo_telefone').value
 
     try {
         let response = await fetch('http://localhost:8080/users/cadastro', {
@@ -18,7 +19,8 @@ document.getElementById('forms_cadastro').addEventListener('submit', async funct
                 email: email,
                 document: cpf,
                 password: senha,
-                age: idade
+                age: idade,
+                phone: telefone
             })
         });
 
