@@ -23,12 +23,13 @@ form.addEventListener("submit", function (event) {
     var username = document.getElementById("campo_nome").value;
     var password = document.getElementById("campo_senha").value;
 
-    login("http://localhost:8080/users/login", {name: username, password: password},callback =>{
+    login("http://127.0.0.1:8080/users/login", {name: username, password: password},callback =>{
  
-        sessionStorage.setItem('client', callback); 
+        localStorage.setItem('client', callback); 
 
-        console.log(sessionStorage.getItem('client'));
+        console.log(localStorage.getItem('client'))
 
-       window.location.href = "../user/pagina_cliente.html"
+        window.location.href = "../user/pagina_cliente.html"
     })
 }) 
+

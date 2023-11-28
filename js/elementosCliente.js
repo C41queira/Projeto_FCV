@@ -3,9 +3,9 @@ const email = document.getElementById('email');
 const telefone = document.getElementById('telefone');
 const idade = document.getElementById('idade');  
 
-var data = JSON.parse(sessionStorage.getItem('client')); 
+var data = JSON.parse(localStorage.getItem('client')); 
 
-console.log(sessionStorage.getItem('client')); 
+console.log(localStorage.getItem('client')); 
 
 nameClient.innerHTML = data.name;
 email.innerHTML = data.email; 

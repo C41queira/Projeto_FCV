@@ -1,4 +1,4 @@
-var client = JSON.parse(sessionStorage.getItem('client')); 
+var client = JSON.parse(localStorage.getItem('client')); 
 
 var url = `http://127.0.0.1:8080/orders/search_orders_user/${client.id}`; 
 
