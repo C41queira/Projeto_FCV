@@ -108,6 +108,18 @@ td{
     border: 1px solid black;
 }
 
+#cancelamento{
+    font-size: 10px !important;
+    width: 20px;
+    height: 20px;
+    margin: 5px auto;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
 footer{
     margin: 0px auto 3% auto;
 

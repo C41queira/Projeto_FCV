@@ -1,8 +1,33 @@
 var client = JSON.parse(localStorage.getItem('client')); 
 
+var tabela = document.getElementById('table');
+
 var url = `http://127.0.0.1:8080/orders/search_orders_user/${client.id}`; 
 
-async function getOrders() {
+const formatterNumber = Intl.NumberFormat('pt-br', {
+    style: 'currency',
+    currency: 'BRL',
+    maximumFractionDigits: 2
+})
+
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + (d.getDate() + 1),
+        year = d.getFullYear();
+
+    if (month.length < 2)
+        month = '0' + month;
+    if (day.length < 2)
+        day = '0' + day;
+
+    return [day, month, year].join('/');
+}
+
+// ---------------------------------GET API---------------------------------------
+
+
+async function getApi(url, callback) {
     const response = await fetch(url, {
         method: 'GET',
         headers: {
@@ -15,46 +40,50 @@ async function getOrders() {
     }
 
     const listObject = await response.json();
-    return listObject;
+    return callback(listObject);
 }
 
-async function populateTable() {
-    const table = document.getElementById("table");
-    try {
-        const listObject = await getOrders();
-        listObject.forEach(element => {
-            createTr(element); 
-        }); 
-        console.log(listObject);
-    } catch (error) {
-        console.error('An error occurred:', error);
+async function ordersData(url, callback) {
+    getApi(url, response => callback(response));
+}
+
+
+
+// -------------------------------------------INNER HTML-----------------------------------------------
+ordersData(url, callback => {
+    const listObject = callback;
+
+    render(listObject);
+})
+
+
+async function render(listObject) {
+    let list = `<tr>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Serviço</th>
+                    <th>Preço</th>
+                    <th>Cancelar</th>
+                </tr>`;
+
+    if (listObject == null) {
+        list = `<p>Usuario não existente</p>
+        <p>Busque novamente</p>`;
+    } else {
+        try {
+            listObject.forEach(element => {
+                list += `<tr>
+                            <td>${element.date}</td>
+                            <td>${element.time}</td>
+                            <td>${element.workOrder.categoryWork}</td>
+                            <td>${formatterNumber.format(element.workOrder.price)}</td>
+                            <td><button class = "btn btn-danger" id="cancelamento" data-remove=${element.id}>X</button></td>
+                        </tr>`;
+            });
+        } catch (error) {
+            console.error('An error occurred:', error);
+        }
     }
-}
 
-populateTable();
-
-/* ------------------------------------------------------------------------------------------------- */
-
-function createTr(data) {
-
-    var newTr = document.createElement('tr');
-
-    var newRow1 = document.createElement('td');
-    newRow1.innerHTML = data.date;
-    newTr.appendChild(newRow1);
-
-    var newRow2 = document.createElement('td');
-    newRow2.innerHTML = data.time;
-    newTr.appendChild(newRow2);
-
-    var newRow3 = document.createElement('td');
-    newRow3.innerHTML = data.workOrder.categoryWork;
-    newTr.appendChild(newRow3);
-
-    var newRow4 = document.createElement('td');
-    newRow4.innerHTML = 'R$' + data.workOrder.price;
-    newTr.appendChild(newRow4);
-
-    table.appendChild(newTr);
-
+    tabela.innerHTML = list;
 }
