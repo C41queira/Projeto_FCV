@@ -1,73 +1,65 @@
-var nome = 'Renato Oliveira Jr';
+import { nameClient, emailClient,telefoneClient, idadeClient } from "./elementosCliente.js";
+
+var nome = 'Renato Oliveira';
 var senha = 'niemuCh5Sei';
 var email = 'renatocarv@gmail.com';
 var documento = '155.822.037-08';
-var idade = '25 anos';
+var idade = '30 anos';
 var telefone = '(19) 9630-4855';
 
-// var data = JSON.parse(localStorage.getItem('client'));
+var data = JSON.parse(localStorage.getItem('client'))
 
-document.getElementById('').addEventListener('click', async function (params) {
-    params.preventDefault();
+var url = `http://127.0.0.1:8080/users/${data.id}`
 
-    await fetch('http://192.168.0.9:8080/users/2', {
 
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            name: nome,
-            email: email,
-            document: documento,
-            password: senha,
-            age: idade,
-            phone: telefone
-        })
+document.getElementById('botaoEdicao').addEventListener('click', async function (params) {
+    params.preventDefault(); 
+    
+    update(url, {
+        name: nome,
+        password: senha,
+        email: email,
+        document: documento,
+        age: idade,
+        phone: telefone
+    }, callback => {
+        localStorage.setItem('client', callback); 
+
+        var data = localStorage.getItem('client')
+
+        insertDados(JSON.parse(data)); 
     })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Something went wrong');
-            }
-            return response.json();
-        })
-        .then(() => {
 
-            getUser('http://192.168.0.9:8080/users/2', callback => {
-                const user = callback;
-
-                localStorage.setItem('client', JSON.parse(user))
-
-                console.log(localStorage.getItem('client'))
-            })
-            alert("Dados atualizados com sucesso!");
-            window.location.href = "../login_registration/login.html";
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+    alert('Dados atualizados com sucesso')
+    
+    window.location.reload();
 
 });
 
 // --------------------------------------------------------------------------------------------------
 
-async function getApi(url, callback) {
-    const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json'
+async function putApi(url, data ,callback) {
+    let xhr = new XMLHttpRequest();
+
+    xhr.onload = function () {
+        if ((xhr.readyState == 0 || xhr.readyState == 4) && xhr.status == 200) {
+            callback(this.responseText)
         }
-    });
-
-    if (!response.ok) {
-        throw new Error(`HTTP error: ${response.status}`);
-    }
-
-    const user = await response.json();
-    return callback(user);
+    };
+    xhr.open('PUT', url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(data));
 }
 
-async function getUser(url, callback) {
-    getApi(url, response => callback(response));
+async function update(url, data, callback) {
+    putApi(url, data, response => callback(response))
+}
+
+// --------------------------------------------------------------------------------------------------
+function insertDados(data){
+    nameClient.innerHTML = data.name;
+    emailClient.innerHTML = data.email; 
+    telefoneClient.innerHTML = data.phone;
+    idadeClient.innerHTML = data.age;    
 }
 
