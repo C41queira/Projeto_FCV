@@ -1,0 +1,11 @@
+#forms-update div{
+    margin: 20px auto;
+}
+
+#forms-update div label{
+    margin: 5px auto;
+}
+
+.buttonModal button{
+    margin: 5px 10px 20px 10px;
+}
