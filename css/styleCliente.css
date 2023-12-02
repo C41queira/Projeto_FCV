@@ -36,6 +36,23 @@ header{
     border-top: 1px solid black;
     border-right: 1px solid black;
     border-left: 1px solid black;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1{
+    margin-left: 30%;
+}
+
+.botaoEdicao{
+    margin: 8px;
+    margin-right: 40px;
+    padding: 5px !important;
+}
+
+.botaoEdicao img{
+    width: 25px;
 }
 
 main{
@@ -68,17 +85,6 @@ h2{
     display: flex;
     justify-content: space-around;
     width: 400px;
-}
-
-@media(max-width: 650px){
-    #inf_basico{
-       flex-direction: column;
-    }
-
-    #linhaPadrao{
-        width: 400px;
-        margin-top: 50px;
-    }
 }
 
 .atributo{
@@ -148,5 +154,28 @@ footer{
 @media(max-width: 770px){
     header, main, footer{
         width: 100%;
+    }
+}
+
+@media(max-width: 650px){
+    #inf_basico{
+       flex-direction: column;
+    }
+
+    #linhaPadrao{
+        width: 400px;
+        margin-top: 50px;
+    }
+
+    header{
+        display: block;
+    }
+
+    header h1{
+        margin: auto;
+    }
+
+    .botaoEdicao{
+        margin: 15px auto;
     }
 }

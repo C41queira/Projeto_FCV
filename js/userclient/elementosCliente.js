@@ -5,6 +5,8 @@ export const idadeClient = document.getElementById('idade');
 
 var data = JSON.parse(localStorage.getItem('client')); 
 
+console.log(data)
+
 nameClient.innerHTML = data.name;
 emailClient.innerHTML = data.email; 
 telefoneClient.innerHTML = data.phone;

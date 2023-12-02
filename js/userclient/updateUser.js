@@ -1,44 +1,42 @@
-import { nameClient, emailClient,telefoneClient, idadeClient } from "./elementosCliente.js";
+import { nameClient, emailClient, telefoneClient } from "./elementosCliente.js";
 
-var nome = 'Renato Oliveira';
-var senha = 'niemuCh5Sei';
-var email = 'renatocarv@gmail.com';
-var documento = '155.822.037-08';
-var idade = '30 anos';
-var telefone = '(19) 9630-4855';
+document.getElementById('buttonAceitar').addEventListener('click', async function (params) {
+    params.preventDefault();
 
-var data = JSON.parse(localStorage.getItem('client'))
+    var data = JSON.parse(localStorage.getItem('client'))
 
-var url = `http://127.0.0.1:8080/users/${data.id}`
+    var url = `http://127.0.0.1:8080/users/${data.id}`
 
 
-document.getElementById('botaoEdicao').addEventListener('click', async function (params) {
-    params.preventDefault(); 
-    
+    var nome = document.getElementById('campo_nome').value;
+    var email = document.getElementById('campo_email').value;
+    var telefone = document.getElementById('campo_telefone').value;
+
     update(url, {
         name: nome,
-        password: senha,
+        password: data.password,
         email: email,
-        document: documento,
-        age: idade,
-        phone: telefone
+        phone: telefone,
+        document: data.document, 
+        age: data.age
+
     }, callback => {
-        localStorage.setItem('client', callback); 
+        localStorage.setItem('client', callback);
 
         var data = localStorage.getItem('client')
 
-        insertDados(JSON.parse(data)); 
+        insertDados(JSON.parse(data));
     })
 
     alert('Dados atualizados com sucesso')
-    
+
     window.location.reload();
 
 });
 
 // --------------------------------------------------------------------------------------------------
 
-async function putApi(url, data ,callback) {
+async function putApi(url, data, callback) {
     let xhr = new XMLHttpRequest();
 
     xhr.onload = function () {
@@ -56,10 +54,9 @@ async function update(url, data, callback) {
 }
 
 // --------------------------------------------------------------------------------------------------
-function insertDados(data){
+function insertDados(data) {
     nameClient.innerHTML = data.name;
-    emailClient.innerHTML = data.email; 
+    emailClient.innerHTML = data.email;
     telefoneClient.innerHTML = data.phone;
-    idadeClient.innerHTML = data.age;    
 }
 

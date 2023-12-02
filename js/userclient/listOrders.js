@@ -1,5 +1,7 @@
 var client = JSON.parse(localStorage.getItem('client')); 
 
+console.log(client)
+
 var tabela = document.getElementById('table');
 
 var url = `http://127.0.0.1:8080/orders/search_orders_user/${client.id}`; 
