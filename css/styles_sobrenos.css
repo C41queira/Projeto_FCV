@@ -1,3 +1,7 @@
+:root{
+    --gradient-color: #CDB1FA, #9E96E3, #A7B4FD;
+}
+
 .container {
     width: 900px !important;
 }
@@ -28,3 +32,15 @@
     margin: 20px 0 10px 0;
 }
 
+footer{
+    background-image: linear-gradient(var(--gradient-color));
+
+    padding: 20px;
+}
+
+.copywrigth{
+    display: flex;
+    justify-content: space-around;
+
+    padding-top: 15px;
+}

@@ -2,6 +2,10 @@
     --gradient-color: #CDB1FA, #9E96E3, #A7B4FD;
 }
 
+section{
+    margin: 50px auto;
+}
+
 @media (max-width: 770px) {
     main{
         display: flex;
