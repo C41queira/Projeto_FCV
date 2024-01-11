@@ -27,8 +27,6 @@ document.getElementById('forms_cadastro').addEventListener('submit', async funct
         if (!response.ok) {
             throw new Error('Something went wrong');
         }
-
-        window.location.href = "login.html"
     } catch (error) {
         console.error(error);
     }

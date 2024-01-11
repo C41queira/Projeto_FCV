@@ -14,35 +14,27 @@
     <main>
         <div class="container text-center">
             <h3>Agendamento</h3>
-            <p>Preencha o formulario do seu agendamento estetico para que possamos adicionalo a nossa agenda de procedimentos.</p>
+            <p>Preencha o formulário do seu agendamento estético para podermos adicioná-lo a nossa agenda de procedimentos.</p>
 
-            <form>
-                <label for="nome">Nome:</label><br>
-                <input type="text" id="nome" name="nome"><br><br>
-
-                <label for="campo_email">Email:</label><br>
-                <input tabindex="1" type="email" name="email" id="campo_email" placeholder="email@email.com"><br><br>
-
+            <form id="forms_order">
+                
                 <label for="servico">Selecione o serviço:</label><br>
-                <select id="servico" name="servico">
-                    <option value="limpeza-de-pele">Limpeza de Pele</option>
-                    <option value="massagem">Massagem</option>
-                    <option value="depilacao">Depilação</option>
-                    <option value="manicure-pedicure">Manicure e Pedicure</option>
-                </select><br><br>
+                <select id="servico" name="servico"></select><br><br>
 
                 <label for="pacote">Selecione o Pacote:</label><br>
-                <select id="pacote" name="pacote" >
-                    <option value="1 vez por semana">1 vez por mes</option>
-                    <option value="3 vezes por semana">3 vezes por mes</option>
-                    <option value="todos os dias">todos os dias</option>
+                <select id="pacote" name="pacote"> 
+                    <option value="diaria">Diária</option>
+                    <option value="mensal">1 vez por mês</option>
+                    <option value="quinzenal">2 vezes por mês</option>
+                    <option value="semanal">1 vez por semana</option>
+                    <option value="diariamente">Todos os dias</option>
                 </select><br><br>
 
                 <label for="data">Data do agendamento:</label><br>
                 <input type="date" id="data" name="data"><br><br>
 
                 <label>Horario Agendamento:</label><br>
-                <input type="time" name="schedule_time" min="00:00" max="23:59" step="600"><br><br>
+                <input type="time" name="schedule_time" min="00:00" max="23:59" step="600" id="time"><br><br>
 
                 <div>
                     <a class="btn btn-secondary" href="../index.html">Voltar</a>
@@ -54,6 +46,8 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="../js/agendamento/CategoryWork.js"></script>
+    <script src="../js/agendamento/CreatedOrder.js"></script>
 </body>
 
 </html>
