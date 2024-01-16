@@ -1,5 +1,5 @@
 :root{
-    --gradient-color: #CDB1FA, #9E96E3, #A7B4FD;
+    --gradient-service: #c1cafd, #b8c3fd, #afbbfd; 
 }
 
 *{
@@ -55,15 +55,13 @@ main section article{
 
     text-align: center;
 
-    background-image: linear-gradient(var(--gradient-color));
-
     position: relative;
 
     border-radius: 10px;
 
     transform-style: preserve-3d;
 
-    background-image: linear-gradient(var(--gradient-color));
+    background-image: linear-gradient(var(--gradient-service));
 }
 
 .servico:hover{

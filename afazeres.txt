@@ -1,3 +1,2 @@
-- orderWeb para order
-- agendamento do cliente
+- refinar style dos serviços; 
 - video e linkedin

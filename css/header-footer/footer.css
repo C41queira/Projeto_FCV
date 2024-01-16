@@ -1,5 +1,5 @@
 :root{
-    --gradient-color: #CDB1FA, #9E96E3, #A7B4FD;
+    --gradient-color: #CDB1FA, #9E96E3;
 }
 
 *{
@@ -8,6 +8,10 @@
 }
 
 footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
     padding-top: 20px; 
 
     background-image: linear-gradient(to bottom, var(--gradient-color));
@@ -35,7 +39,6 @@ footer h1{
 
 .informacao{
     width: 280px;
-    height: 140px;
     justify-content: center;
 }
 

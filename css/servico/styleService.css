@@ -1,3 +1,5 @@
+body, ul{margin: 0; padding: 0;}
+
 :root {
     --gradient-color: #CDB1FA, #9E96E3, #A7B4FD;
 }
@@ -34,8 +36,9 @@ section{
     text-align: justify;
 }
 
-#img-tabela {
-    display: flex;
+#img-tabela img {
+    float: left;
+    margin: 0 10px 10px 0;
 }
 
 .botoes {
@@ -44,6 +47,11 @@ section{
     display: flex;
     justify-content: space-around;
     width: 50%;
+}
+
+.btn{
+    padding: 6px 30px !important;
+    font-size: 1.2em !important;
 }
 
 .bot {

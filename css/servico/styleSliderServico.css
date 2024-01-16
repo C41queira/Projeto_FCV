@@ -1,0 +1,117 @@
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --widthSlide: 400px;
+    --heightSlide: 400px;
+
+    --colorDiaria:#cad2fd; 
+    --colorMensal: #c1cafd; 
+    --colorQuinzenal: #b8c3fd; 
+    --colorSemanal: #afbbfd;
+    --colorDiario: #a7b4fd;
+}
+
+.carrosel{
+    width: 450px;
+    margin:  20px auto;
+    display: flex;
+    position: relative;
+}
+
+.botao img{
+    width: 40px;
+}
+
+.slider {
+    width: var(--widthSlide);
+    height: var(--heightSlide);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slides {
+    width: calc(var(--widthSlide)*5);
+    height: var(--heightSlide);
+    display: flex;
+    text-align: center;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: var(--widthSlide);
+    position: relative;
+    transition: 2s;
+
+    border-radius: 10px;
+
+    background-color: gray;
+
+    z-index: 0;
+}
+
+.slide ul{
+    list-style: none;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 30px;
+    padding-left: 0;
+}
+
+.slide ul li{
+    margin: 12px auto;
+}
+
+.invalido{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+#first{background-color: var(--colorDiaria);}
+
+#mensal{background-color: var(--colorMensal);}
+
+#quize{background-color: var(--colorQuinzenal);}
+
+#semana{background-color: var(--colorSemanal);}
+
+#diario{background-color: var(--colorDiario);}
+
+#voltar,
+#avancar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    font-size: 20px;
+    line-height: 250px;
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    opacity: 0.5;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+#voltar{
+    position: absolute;
+    left: 0;
+    right: auto;
+    background: linear-gradient(to left, transparent 0%, black 150%);
+}
+
+#avancar{
+    position: absolute;
+    left: auto;
+    right: 0;
+    background: linear-gradient(to right, transparent 0%, black 200%);
+}
+
+#voltar:hover, #avancar:hover{
+    opacity: 1;
+}
